@@ -1,10 +1,11 @@
-//public class Main
-//{
-//    static void main()
-//    {
-//        System.out.println(APCalendar.firstDayOfYear(2025));
-//        System.out.println(APCalendar.dayOfYear(11, 3, 2025));
-//        System.out.println(340 % 7);
-//        System.out.println(APCalendar.dayOfWeek(11, 3, 2025));
-//    }
-//}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println(APCalendar.dayOfWeek(1, 5, 2019));
+        System.out.println(APCalendar.dayOfWeek(1, 10, 2019));
+        System.out.println(APCalendar.firstDayOfYear(2019));
+        System.out.println(APCalendar.dayOfYear(3, 1, 2017));
+        System.out.println(APCalendar.dayOfYear(3, 1, 2016));
+    }
+}
