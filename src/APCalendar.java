@@ -10,10 +10,13 @@ public class APCalendar
     /** Returns the number of leap years between year1 and year2, inclusive.
      * Precondition: 0 <= year1 <= year2
      */
-    public static int numberOfLeapYears(int year1, int year2) {
+    public static int numberOfLeapYears(int year1, int year2)
+    {
         int leapYears = 0;
-        for (int year = year1; year <= year2; year++) {
-            if (isLeapYear(year)) {
+        for (int year = year1; year <= year2; year++)
+        {
+            if (isLeapYear(year))
+            {
                 leapYears++;
             }
         }
@@ -26,12 +29,14 @@ public class APCalendar
     {
         int day = 3;
         if (year < 2025)
-            for (int i = year; i <= 2025; i++)
+            for (int i = 2025; i >= year; i--)
             {
-                if (APCalendar.isLeapYear(i + 1)) {
-                    day += 5;
+                if (isLeapYear(i))
+                {
+                    day += 12;
                 }
-                if (!APCalendar.isLeapYear(i + 1)) {
+                if (!isLeapYear(i))
+                {
                     day += 6;
                 }
             }
@@ -47,7 +52,7 @@ public class APCalendar
                     day++;
                 }
             }
-        return day % 7;
+        return (day + 1) % 7;
     }
     /** Returns n, where month, day, and year specify the nth day of the year.
      * Returns 1 for January 1 (month = 1, day = 1) of any year.
@@ -68,9 +73,8 @@ public class APCalendar
      * and 6 denotes Saturday.
      * Precondition: The date represented by month, day, year is a valid date.
      */
-//    public static int dayOfWeek(int month, int day, int year)
-//    {
-//        return ((firstDayOfYear(year) + dayOfYear(month, day, year)) % 7);
-//    }
+    public static int dayOfWeek(int month, int day, int year)
+    {
+        return ((firstDayOfYear(year) + dayOfYear(month, day, year) - 1) % 7);
+    }
 }
-
